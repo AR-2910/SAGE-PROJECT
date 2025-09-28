@@ -25,8 +25,8 @@ def lambda_handler(event, context):
         ses = boto3.client("ses", region_name="us-east-1")
         try:
             ses.send_email(
-                Source="abhinavranascorpio@gmail.com",  
-                Destination={"ToAddresses": ["abhinavranascorpio@gmail.com"]},  
+                Source="your-verified-sender@example.com",  
+                Destination={"ToAddresses": ["your-recipient@example.com"]},  
                 Message={
                     "Subject": {"Data": "Earthquake Alert"},
                     "Body": {"Text": {"Data": "\n".join(alerts)}}
